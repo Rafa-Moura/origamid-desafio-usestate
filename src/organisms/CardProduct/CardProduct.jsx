@@ -14,7 +14,11 @@ export default function CardProduct({ nome, preco, descricao, fotos }) {
           ))}
       </Styled.CardImageContainer>
       <Styled.CardDescriptionContainer>
-        <SubTitle name={nome} />
+        {nome ? (
+          <SubTitle name={nome} />
+        ) : (
+          <SubTitle name="Clique em um dos botões acima para carregar dados de um produto" />
+        )}
         {preco && (
           <Paragraph
             text={Number(preco).toLocaleString("pt-BR", {
